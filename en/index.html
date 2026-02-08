@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Emma – medical equipment management under control</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --text: #0f172a;
+      --muted: #6b7280;
+      --bg: #f9fafb;
+      --card: #ffffff;
+      --border: #e5e7eb;
+    }
+header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: #ffffff;
+  backdrop-filter: blur(8px);
+}
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Header */
+    header {
+      border-bottom: 1px solid var(--border);
+      background: #ffffff;
+    }
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+      gap: 1.5rem;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 1.25rem;
+      letter-spacing: 0.04em;
+    }
+.logo img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      font-size: 0.95rem;
+    }
+    nav a {
+      color: var(--muted);
+    }
+    nav a:hover {
+      color: var(--primary);
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-shrink: 0;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.6rem 1.3rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25);
+    }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 14px 30px rgba(37, 99, 235, 0.3);
+    }
+    .btn-outline {
+      background: #ffffff;
+      color: var(--text);
+      border-color: var(--border);
+    }
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: #f9fafb;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 3.5rem 0 3rem;
+      text-align: center;
+    }
+    .hero-kicker {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+    .hero-title {
+      font-size: clamp(2.2rem, 3vw, 2.8rem);
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    .hero-subtitle {
+      max-width: 640px;
+      margin: 0 auto 1.5rem;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+    .hero-highlight {
+      max-width: 640px;
+      margin: 0 auto 2rem;
+      font-size: 0.98rem;
+      color: var(--text);
+      font-weight: 500;
+    }
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+    .hero-note {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+    .hero-dashboard-wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 1.25rem;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+      padding: 1.25rem;
+      border: 1px solid var(--border);
+    }
+    .hero-dashboard {
+      width: 100%;
+      border-radius: 0.9rem;
+      overflow: hidden;
+      background: #f3f4f6;
+    }
+    .hero-dashboard img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    /* Sections */
+    section {
+      padding: 3rem 0;
+    }
+    .section-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 2rem;
+    }
+    .section-kicker {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-size: 1.7rem;
+      margin-bottom: 0.5rem;
+    }
+    .section-subtitle {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    /* Features */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+    .feature-card {
+      background: var(--card);
+      border-radius: 1rem;
+      padding: 1.3rem 1.3rem 1.2rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .feature-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+    .feature-title {
+      font-size: 1.02rem;
+      font-weight: 600;
+    }
+    .feature-text {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* Screens */
+    .screens-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+    .screen-card {
+      background: var(--card);
+      border-radius: 1rem;
+      padding: 0.9rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .screen-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+    .screen-image {
+      width: 100%;
+      height: 180px;
+      border-radius: 0.75rem;
+      background: #e5e7eb;
+      object-fit: cover;
+    }
+    .screen-caption {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* Testimonials */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+    .testimonial {
+      background: var(--card);
+      border-radius: 1rem;
+      padding: 1.3rem 1.3rem 1.2rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+      font-size: 0.9rem;
+      color: var(--muted);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .testimonial-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .testimonial-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: #e5e7eb;
+      flex-shrink: 0;
+    }
+    .testimonial-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .testimonial-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+    .testimonial-author {
+      font-weight: 600;
+      color: var(--text);
+      font-size: 0.9rem;
+    }
+    .testimonial-role {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .testimonial-quote {
+      font-style: italic;
+    }
+
+    /* CTA */
+    .cta {
+      text-align: center;
+      padding: 3rem 1.5rem;
+      background: radial-gradient(circle at top, #dbeafe, #eff6ff 40%, #e5e7eb 100%);
+      border-radius: 1.5rem;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+      margin: 3rem 0 3.5rem;
+    }
+    .cta h2 {
+      font-size: 1.9rem;
+      margin-bottom: 0.5rem;
+    }
+    .cta p {
+      color: var(--muted);
+      max-width: 32rem;
+      margin: 0 auto 1.5rem;
+      font-size: 0.96rem;
+    }
+    .cta-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    .cta-meta {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .cta-meta span::before {
+      content: "✔";
+      color: #10b981;
+      margin-right: 0.35rem;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      background: #ffffff;
+      padding: 2rem 0 1.75rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .footer-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-nav a {
+      color: var(--muted);
+    }
+    .footer-nav a:hover {
+      color: var(--primary);
+    }
+    .footer-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .footer-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .features-grid,
+      .screens-grid,
+      .testimonials-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    @media (max-width: 720px) {
+      .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav ul {
+        flex-wrap: wrap;
+        font-size: 0.9rem;
+      }
+      .features-grid,
+      .screens-grid,
+      .testimonials-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .cta {
+        border-radius: 1.1rem;
+      }
+    }
+/* --- Mobile hamburger nav --- */
+    .hamburger {
+      display: none;
+      border: 1px solid var(--border);
+      background: #fff;
+      border-radius: 999px;
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .hamburger:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+    }
+    .hamburger-lines {
+      width: 18px;
+      height: 12px;
+      position: relative;
+    }
+    .hamburger-lines span {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--text);
+      border-radius: 999px;
+      transition: transform 0.18s ease, opacity 0.18s ease, top 0.18s ease;
+    }
+    .hamburger-lines span:nth-child(1) { top: 0; }
+    .hamburger-lines span:nth-child(2) { top: 5px; }
+    .hamburger-lines span:nth-child(3) { top: 10px; }
+
+    header.is-open .hamburger-lines span:nth-child(1) { top: 5px; transform: rotate(45deg); }
+    header.is-open .hamburger-lines span:nth-child(2) { opacity: 0; }
+    header.is-open .hamburger-lines span:nth-child(3) { top: 5px; transform: rotate(-45deg); }
+
+    .mobile-nav {
+      display: none;
+      border-top: 1px solid var(--border);
+      background: #ffffff;
+    }
+    header.is-open .mobile-nav {
+      display: block;
+    }
+
+    .mobile-nav-inner {
+      padding: 0.9rem 0 1.1rem;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .mobile-links {
+      display: grid;
+      gap: 0.35rem;
+    }
+    .mobile-links a {
+      padding: 0.65rem 0.2rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .mobile-links a:hover { color: var(--primary); }
+
+    .mobile-actions {
+      display: grid;
+      gap: 0.6rem;
+    }
+    .mobile-actions .btn {
+      width: 100%;
+    }
+
+    /* ✅ Najważniejsze: na mobile header w jednej linii */
+    @media (max-width: 720px) {
+      .top-bar {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        padding: 0.85rem 0;
+      }
+
+      nav, .nav-actions {
+        display: none;
+      }
+
+      .hamburger {
+        display: inline-flex;
+      }
+    }
+
+  
+/* --- Small helper link under CTA buttons --- */
+.cta-sub-link{
+  display:block;
+  margin-top:0.5rem;
+  font-size:0.85rem;
+  color:var(--muted);
+  text-decoration:none;
+}
+.cta-sub-link:hover{ color: var(--primary); text-decoration: underline; }
+
+
+/* --- Overlap carousel (center slide ~70% width, side peeks) --- */
+.carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 0.25rem 0;
+}
+.carousel-track {
+  display: flex;
+  gap: 0;
+  transition: transform 0.4s ease;
+  will-change: transform;
+}
+.carousel-slide{
+  flex: 0 0 70%;
+  margin: 0 -12%;
+  position: relative;
+  z-index: 1;
+  transform: scale(0.8);
+  opacity: 0.9;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+  pointer-events: none;
+}
+.carousel-slide.is-active{
+  z-index: 3;
+  transform: scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+.carousel-slide img{
+  display:block;
+  width: 100%;
+  max-height: 620px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: none;
+  background: #e5e7eb;
+}
+@media (max-width: 720px){
+  .carousel-slide{ flex-basis: 86%; margin: 0 -18%; }
+  .carousel-slide img{ max-height: 520px; }
+}
+.carousel-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #cbd5e1;
+  cursor: pointer;
+}
+.carousel-dot.active { background: var(--primary); }
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ffffff;
+  border: 1px solid var(--border);
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: none;
+  z-index: 4;
+}
+.carousel-arrow:hover { background: #f8fafc; }
+.carousel-arrow.prev { left: 12px; }
+.carousel-arrow.next { right: 12px; }
+
+
+
+/* --- Carousel: no shadows, side slides smaller --- */
+.carousel-slide img{ box-shadow: none !important; }
+
+
+/* --- Language switch --- */
+.lang-switch{
+  display:inline-flex;
+  align-items:center;
+  gap:0.4rem;
+  padding:0.25rem 0.4rem;
+  border:1px solid var(--border);
+  border-radius:999px;
+  background:#fff;
+  font-size:0.85rem;
+  color:var(--muted);
+}
+.lang-switch a{
+  color:var(--muted);
+  padding:0.2rem 0.35rem;
+  border-radius:999px;
+}
+.lang-switch a.active{
+  color:var(--text);
+  font-weight:700;
+}
+.lang-switch a:hover{ color: var(--primary); }
+
+
+/* --- Click and open photo (fullscreen modal) --- */
+.hero-dashboard img { cursor: pointer; }
+
+/* Modal overlay */
+.image-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal image */
+.modal-content {
+  max-width: 95%;
+  max-height: 95%;
+  animation: zoomIn 0.25s ease;
+}
+
+/* Close button */
+.image-modal .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Click only on active carousel slide */
+.carousel-slide .fullscreen-image { pointer-events: none; }
+.carousel-slide.is-active .fullscreen-image { pointer-events: auto; cursor: pointer; }
+
+</style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="top-bar">
+        <div class="logo"><img src="emma_logo.png" alt="EMMA"></div>
+        <nav>
+          <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#demo">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="nav-actions">
+          
+          <div class="lang-switch" aria-label="Wybór języka">
+            <a href="/" data-lang="pl">PL</a>
+            <span aria-hidden="true">|</span>
+            <a href="/en/" data-lang="en">EN</a>
+          </div>
+<a href="https://airtable.com/appYhlamOxK3EYv9h/pagX4xjqKLYD6QiHI" class="btn btn-outline">Log in</a>
+          <a href="https://calendly.com/karczewskipawel89/new-meeting" target="_blank" rel="noopener" class="btn btn-primary">See a demo</a>
+
+        </div>
+
+        <!-- Hamburger (mobile) -->
+        <button class="hamburger" type="button" aria-label="Open menu" aria-expanded="false">
+          <span class="hamburger-lines" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </span>
+        </button>
+      </div>
+
+      <!-- Mobile menu -->
+      <div class="mobile-nav" role="navigation" aria-label="Mobile menu">
+        <div class="mobile-nav-inner">
+          <div class="mobile-links">
+            <a href="#features">Features</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <div class="mobile-actions">
+            
+            <div class="lang-switch" aria-label="Wybór języka" style="justify-content:center;">
+              <a href="/" data-lang="pl">PL</a>
+              <span aria-hidden="true">|</span>
+              <a href="/en/" data-lang="en">EN</a>
+            </div>
+<a href="https://airtable.com/appYhlamOxK3EYv9h/pagX4xjqKLYD6QiHI" class="btn btn-outline">Log in</a>
+            <a href="https://calendly.com/karczewskipawel89/new-meeting" target="_blank" rel="noopener" class="btn btn-primary">Request a demo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+<div class="image-modal" id="imageModal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImage">
+</div>
+
+
+    <!-- Hero -->
+    <section class="hero" id="product">
+      <div class="container">
+        <div class="hero-kicker">For hospitals that want clarity</div>
+        <h1 class="hero-title">An intuitive system for medical equipment management</h1>
+        <p class="hero-subtitle">
+          Improve efficiency, stay fully on top of inspections, repairs and costs, and always be audit-ready.
+        </p><br>
+        <div class="hero-actions">
+          <a href="https://calendly.com/karczewskipawel89/new-meeting" target="_blank" rel="noopener" class="btn btn-primary">Start a free trial</a>
+        </div>
+        <p class="hero-note">Compliant for healthcare, scalable, and ready to use from day one.</p>
+
+        <div class="hero-dashboard-wrapper">
+          <div class="hero-dashboard">
+            <img id="dashboardImage" src="screens/dashboard-hero.png" alt="Emma main dashboard – overview of devices and inspections" />
+          </div>
+        </div>
+      </div><br>
+    </section>
+
+    <!-- Features -->
+    <section id="features">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Features</div>
+          <h2 class="section-title">Streamline medical equipment management</h2>
+          <p class="section-subtitle">
+            Emma mirrors real hospital workflows — from inspections and repairs to purchasing and documentation.
+          </p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-label">1. Full control of your devices</div>
+            <div class="feature-title">Every device status in one place</div>
+            <p class="feature-text">
+              Track inspections, repairs and technical condition. Each device has its own profile with service history, documents and owner.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-label">2. Automated PDF documents</div>
+            <div class="feature-title">Requests and inquiries in seconds</div>
+            <p class="feature-text">
+              Select one or more devices and generate professional service tickets, repair orders or RFQs — ready to send.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-label">3. Costs and vendors</div>
+            <div class="feature-title">Smarter budget decisions</div>
+            <p class="feature-text">
+              Analyze costs, depreciation and device reliability. Compare vendors based on service history, response time and support quality.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screens -->
+    
+<section id="screens">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-kicker">PRODUCT</div>
+      <h2 class="section-title" style="text-align:center">See Emma in everyday work</h2>
+      <p class="section-subtitle section-desc">
+        Emma’s interface is designed for speed, clarity and staff safety.
+      </p>
+    </div>
+
+    <div class="carousel" id="emmaCarousel">
+      <button class="carousel-arrow prev" aria-label="Previous slide">‹</button>
+      <button class="carousel-arrow next" aria-label="Next slide">›</button>
+
+      <div class="carousel-track">
+        <div class="carousel-slide" data-clone="last">
+          <img src="screens/offer-generator.png" alt="PDF document generator in Emma" class="fullscreen-image">
+        </div>
+        <div class="carousel-slide">
+          <img src="screens/devices-list.png" alt="Device list in Emma" class="fullscreen-image">
+        </div>
+        <div class="carousel-slide">
+          <img src="screens/device-card.png" alt="Device profile in Emma" class="fullscreen-image">
+        </div>
+        <div class="carousel-slide">
+          <img src="screens/offer-generator.png" alt="PDF document generator in Emma" class="fullscreen-image">
+        </div>
+        <div class="carousel-slide" data-clone="first">
+          <img src="screens/devices-list.png" alt="Device list in Emma" class="fullscreen-image">
+        </div>
+      </div>
+
+      <div class="carousel-nav" aria-label="Carousel navigation"></div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- How it works (krótko, w duchu designu) -->
+    <section id="how-it-works">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">How it works</div>
+          <h2 class="section-title">From chaos to control in a few steps</h2>
+          <p class="section-subtitle">
+            Log in, see priorities, generate documents, and keep the full action history at your fingertips.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="demo">
+      <div class="container">
+        <div class="cta">
+          <h2>Ready to regain control of your equipment?</h2>
+          <p>
+            Say goodbye to spreadsheets and surprises. Let Emma handle the chaos so your team can focus on patient care.
+          </p>
+          <div class="cta-actions">
+            <a href="https://calendly.com/karczewskipawel89/new-meeting" target="_blank" rel="noopener" class="btn btn-primary">See a demo</a>
+
+          </div>
+          <div class="cta-meta">
+            <span>No implementation fees</span>
+            <span>Works immediately with your data</span>
+            <span>No long-term commitments</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Testimonials</div>
+          <h2 class="section-title">Real impact. Real relief.</h2>
+        </div>
+        <div class="testimonials-grid">
+          <div class="testimonial">
+            <div class="testimonial-header">
+              <div class="testimonial-avatar">
+                <img src="screens/testimonial-1.png" alt="Avatar – Head of Procurement" />
+              </div>
+              <div class="testimonial-meta">
+                <div class="testimonial-author">Head of Procurement</div>
+                <div class="testimonial-role">Regional hospital</div>
+              </div>
+            </div>
+            <p class="testimonial-quote">
+              “With Emma, we finally have full visibility into our devices. We no longer miss inspections, and documentation is always ready for an audit.”
+            </p>
+          </div>
+          <div class="testimonial">
+            <div class="testimonial-header">
+              <div class="testimonial-avatar">
+                <img src="screens/testimonial-2.png" alt="Avatar – Medical Equipment Manager" />
+              </div>
+              <div class="testimonial-meta">
+                <div class="testimonial-author">Medical Equipment Manager</div>
+                <div class="testimonial-role">Public healthcare facility</div>
+              </div>
+            </div>
+            <p class="testimonial-quote">
+              “It’s like hiring a full-time assistant — Emma handles coordination, paperwork and reminders.”
+            </p>
+          </div>
+          <div class="testimonial">
+            <div class="testimonial-header">
+              <div class="testimonial-avatar">
+                <img src="screens/testimonial-3.png" alt="Avatar – Operations Manager" />
+              </div>
+              <div class="testimonial-meta">
+                <div class="testimonial-author">Operations Manager</div>
+                <div class="testimonial-role">University clinic</div>
+              </div>
+            </div>
+            <p class="testimonial-quote">
+              “Implementation was immediate. Our data was already in the system, and we could start using Emma the same day.”
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="logo">Emma</div>
+          <p>Built for hospitals that want clarity, not complexity.</p>
+        </div>
+        <div class="footer-contact">
+          <span><strong>Support:</strong> support@emmamed.com</span>
+        </div>
+        <div class="footer-nav">
+          <a href="#features">Features</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#demo">Contact</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Emma — All rights reserved.</span>
+        <span>Design inspired by modern SaaS applications.</span>
+      </div>
+    </div>
+  </footer>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImage");
+  const closeBtn = modal ? modal.querySelector(".close") : null;
+  if (!modal || !modalImg || !closeBtn) return;
+
+  function openModal(img) {
+    modal.style.display = "flex";
+    modalImg.src = img.src;
+    modalImg.alt = img.alt || "";
+  }
+
+  function closeModal() {
+    modal.style.display = "none";
+    modalImg.src = "";
+  }
+
+  // HERO
+  const heroImg = document.getElementById("dashboardImage");
+  if (heroImg) heroImg.addEventListener("click", () => openModal(heroImg));
+
+  // CAROUSEL (event delegation)
+  const carousel = document.getElementById("emmaCarousel");
+  if (carousel) {
+    carousel.addEventListener("click", (e) => {
+      const img = e.target.closest(".fullscreen-image");
+      if (!img) return;
+
+      const slide = img.closest(".carousel-slide");
+      if (!slide || !slide.classList.contains("is-active")) return;
+
+      openModal(img);
+    });
+  }
+
+  // Close interactions
+  closeBtn.addEventListener("click", closeModal);
+  modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
+});
+</script>
+
+
+<script>
+(function () {
+  const carousel = document.getElementById("emmaCarousel");
+  if (!carousel) return;
+
+  const track = carousel.querySelector(".carousel-track");
+  const slides = Array.from(track.querySelectorAll(".carousel-slide"));
+  const dotsWrap = carousel.querySelector(".carousel-nav");
+  const prevBtn = carousel.querySelector(".carousel-arrow.prev");
+  const nextBtn = carousel.querySelector(".carousel-arrow.next");
+
+  const realSlides = slides.filter(s => !s.dataset.clone);
+  if (realSlides.length === 0) return;
+
+  // Structure: [lastClone, real1..realN, firstClone]
+  let index = 1; // first real slide
+  let isJumping = false;
+
+  function centers() {
+    return slides.map(s => s.offsetLeft + s.offsetWidth / 2);
+  }
+
+  function setTranslateTo(i, animate) {
+    const c = centers();
+    const carouselCenter = carousel.clientWidth / 2;
+    const delta = carouselCenter - c[i];
+    track.style.transition = animate ? "transform 0.45s ease" : "none";
+    track.style.transform = "translateX(" + delta + "px)";
+  }
+
+  function setActive() {
+    slides.forEach((s, i) => s.classList.toggle("is-active", i === index));
+  }
+
+  function updateDots() {
+    if (!dotsWrap) return;
+    const realIndex =
+      slides[index]?.dataset.clone === "last" ? realSlides.length - 1 :
+      slides[index]?.dataset.clone === "first" ? 0 :
+      Math.max(0, index - 1);
+    dotsWrap.querySelectorAll(".carousel-dot").forEach((d, i) => d.classList.toggle("active", i === realIndex));
+  }
+
+  function snapTo(i) {
+    index = i;
+    setActive();
+    // Wait one frame so active styles apply before measuring
+    requestAnimationFrame(() => {
+      setTranslateTo(index, true);
+      updateDots();
+    });
+  }
+
+  function hardJumpTo(i) {
+    // Critical: disable transition BEFORE setting transform, then force reflow, then re-enable.
+    index = i;
+    setActive();
+    setTranslateTo(index, false);
+    updateDots();
+    // force reflow so the browser commits the non-animated transform
+    void track.offsetHeight;
+    track.style.transition = "transform 0.45s ease";
+  }
+
+  function next() { snapTo(index + 1); }
+  function prev() { snapTo(index - 1); }
+
+  // Dots
+  if (dotsWrap) {
+    dotsWrap.innerHTML = "";
+    realSlides.forEach((_, i) => {
+      const dot = document.createElement("div");
+      dot.className = "carousel-dot" + (i === 0 ? " active" : "");
+      dot.addEventListener("click", () => snapTo(i + 1));
+      dotsWrap.appendChild(dot);
+    });
+  }
+
+  nextBtn && nextBtn.addEventListener("click", next);
+  prevBtn && prevBtn.addEventListener("click", prev);
+
+  // Swipe
+  let startX = null;
+  carousel.addEventListener("touchstart", (e) => { startX = e.touches[0].clientX; }, { passive: true });
+  carousel.addEventListener("touchend", (e) => {
+    if (startX === null) return;
+    const endX = e.changedTouches[0].clientX;
+    const diff = endX - startX;
+    startX = null;
+    if (Math.abs(diff) < 35) return;
+    if (diff > 0) prev();
+    else next();
+  });
+
+  track.addEventListener("transitionend", () => {
+    if (isJumping) return;
+
+    const cur = slides[index];
+    if (!cur || !cur.dataset.clone) return;
+
+    isJumping = true;
+    if (cur.dataset.clone === "first") {
+      // reached end clone -> jump to first real, WITHOUT animating back
+      hardJumpTo(1);
+    } else if (cur.dataset.clone === "last") {
+      // reached start clone -> jump to last real
+      hardJumpTo(realSlides.length);
+    }
+    // release guard on next frame
+    requestAnimationFrame(() => { isJumping = false; });
+  });
+
+  window.addEventListener("resize", () => {
+    // keep current slide centered on resize without animation
+    setTranslateTo(index, false);
+    void track.offsetHeight;
+    track.style.transition = "transform 0.45s ease";
+  });
+
+  // Init (no animation)
+  hardJumpTo(1);
+})();
+</script>
+
+
+<script>
+(function () {
+  const header = document.querySelector("header");
+  const btn = document.querySelector(".hamburger");
+  const mobileLinks = document.querySelectorAll(".mobile-nav a");
+  if (!header || !btn) return;
+
+  function closeMenu() {
+    header.classList.remove("is-open");
+    btn.setAttribute("aria-expanded", "false");
+  }
+
+  btn.addEventListener("click", () => {
+    const isOpen = header.classList.toggle("is-open");
+    btn.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  mobileLinks.forEach(a => a.addEventListener("click", closeMenu));
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenu(); });
+})();
+</script>
+
+
+<script>
+(function () {
+  // Preferred language is stored in localStorage as "emma_lang" = "pl" or "en"
+  var KEY = "emma_lang";
+  var current = document.documentElement.lang || "pl";
+  var preferred = null;
+  try { preferred = localStorage.getItem(KEY); } catch(e) {}
+
+  // If preference differs, redirect to the correct path.
+  // Assumption for GitHub Pages:
+  // - PL is served from "/"
+  // - EN is served from "/en/"
+  if (preferred && preferred !== current) {
+    var target = (preferred === "en") ? "/en/" : "/";
+    if (location.pathname !== target && !(preferred === "pl" && location.pathname === "/index.html")) {
+      location.replace(target);
+      return;
+    }
+  }
+
+  // Highlight active language and store preference on click
+  var links = document.querySelectorAll(".lang-switch a[data-lang]");
+  links.forEach(function (a) {
+    if (a.getAttribute("data-lang") === current) a.classList.add("active");
+    a.addEventListener("click", function () {
+      try { localStorage.setItem(KEY, a.getAttribute("data-lang")); } catch(e) {}
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
