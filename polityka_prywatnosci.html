@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Polityka prywatności EMMA | System www.emmamed.com</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-color: #0f172a;
+      --secondary-color: #64748b;
+      --accent-color: #3b82f6;
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --text-color: #1e293b;
+      --table-header-bg: #f1f5f9;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-color);
+      line-height: 1.7;
+      background-color: var(--bg-color);
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: var(--card-bg);
+      padding: 60px;
+      border-radius: 16px;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    h1, h2, h3 { color: var(--primary-color); }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 30px;
+      line-height: 1.2;
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 20px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin: 40px 0 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-left: 4px solid var(--accent-color);
+      padding-left: 15px;
+    }
+
+    h3 {
+      font-size: 18px;
+      margin: 30px 0 15px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    p { margin-bottom: 18px; text-align: justify; }
+
+    ol, ul { margin-bottom: 24px; padding-left: 25px; }
+    li { margin-bottom: 10px; }
+
+    .muted {
+      color: var(--secondary-color);
+      font-style: italic;
+      margin-top: -8px;
+    }
+
+    .table-container {
+      overflow-x: auto;
+      margin: 30px 0;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      background: white;
+    }
+
+    th {
+      background-color: var(--table-header-bg);
+      color: var(--primary-color);
+      font-weight: 700;
+      text-align: left;
+      padding: 14px 18px;
+      border-bottom: 2px solid var(--border-color);
+    }
+
+    td {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border-color);
+      vertical-align: top;
+      color: var(--secondary-color);
+    }
+
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) { background-color: #fafafa; }
+
+    strong { color: var(--primary-color); }
+
+    .badge {
+      display: inline-block;
+      font-size: 12px;
+      padding: 4px 10px;
+      border: 1px solid var(--border-color);
+      border-radius: 999px;
+      color: var(--secondary-color);
+      margin-top: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .container { padding: 30px 20px; }
+      h1 { font-size: 24px; }
+    }
+  </style>
+
+  <!-- Placeholdery jak w przesłanym wzorze -->
+  <script src="js/components.js" defer></script>
+</head>
+
+<body>
+  <div id="header-placeholder"></div>
+
+  <main class="container">
+    <article>
+      <h1>POLITYKA PRYWATNOŚCI – SYSTEM EMMA</h1>
+      <p class="muted">
+        Dokument dotyczy Systemu EMMA dostępnego pod adresem <strong>www.emmamed.com</strong>.
+        System przeznaczony jest dla podmiotów profesjonalnych (B2B).
+      </p>
+
+      <h2>I. POSTANOWIENIA OGÓLNE</h2>
+      <ol style="list-style-type: upper-roman;">
+        <li>
+          <strong>Zakres dokumentu</strong>
+          <ol>
+            <li>Niniejsza Polityka prywatności opisuje zasady przetwarzania danych osobowych oraz bezpieczeństwa informacji w związku z korzystaniem z Systemu EMMA („System”).</li>
+            <li>Polityka ma zastosowanie do:
+              <ul>
+                <li>osób korzystających z Systemu w imieniu Klienta (Użytkowników),</li>
+                <li>osób kontaktowych po stronie Klienta,</li>
+                <li>innych osób, których dane mogą zostać wprowadzone do Systemu przez Użytkowników (w tym potencjalnie osób, których dane dotyczą w dokumentacji prowadzonej przez Klienta).</li>
+              </ul>
+            </li>
+            <li>System jest rozwiązaniem typu SaaS (usługa świadczona drogą elektroniczną). Administrator/Usługodawca zapewnia środki organizacyjne i techniczne adekwatne do charakteru przetwarzania.</li>
+          </ol>
+        </li>
+
+        <li>
+          <strong>Role w przetwarzaniu danych</strong>
+          <p class="muted">W Systemie mogą występować różne role w rozumieniu RODO:</p>
+
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Rola</th>
+                  <th>Opis</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Klient</strong></td>
+                  <td>Co do zasady jest administratorem danych osobowych wprowadzanych do Systemu (np. danych pracowników, kontrahentów, a także danych, które Klient przetwarza w ramach swojej działalności).</td>
+                </tr>
+                <tr>
+                  <td><strong>Usługodawca (System EMMA)</strong></td>
+                  <td>Co do zasady działa jako podmiot przetwarzający dane w imieniu Klienta, na podstawie umowy powierzenia przetwarzania danych.</td>
+                </tr>
+                <tr>
+                  <td><strong>Użytkownik</strong></td>
+                  <td>Osoba fizyczna upoważniona przez Klienta do korzystania z Systemu, działająca w ramach nadanych uprawnień.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </li>
+
+        <li>
+          <strong>Dane identyfikacyjne Usługodawcy</strong>
+          <ol>
+            <li>Usługodawca / podmiot odpowiedzialny za System:
+              <ul>
+                <li><strong>T&A Paweł Karczewski</strong></li>
+                <li><strong>Agawy 8/15, 01-158 Warszawa</strong></li>
+                <li><strong>NIP:</strong>9211868496</li>
+                <li><strong>E-mail kontaktowy:</strong> pawel@emmamed.com</li>
+              </ul>
+            </li>
+
+          </ol>
+        </li>
+      </ol>
+
+      <h2>II. JAKIE DANE PRZETWARZAMY</h2>
+      <ol>
+        <li>
+          <strong>Dane Użytkowników Systemu</strong>
+          <ol>
+            <li>W związku z utworzeniem i obsługą konta Użytkownika możemy przetwarzać: imię i nazwisko, firmowy adres e-mail, numer telefonu, nazwę podmiotu (Klienta), identyfikator konta, rolę i uprawnienia w Systemie.</li>
+            <li>W ramach korzystania z Systemu przetwarzane mogą być również dane techniczne i eksploatacyjne, takie jak: adres IP, identyfikatory sesji, logi zdarzeń, informacje o przeglądarce/urządzeniu.</li>
+          </ol>
+        </li>
+        <li>
+          <strong>Dane wprowadzane do Systemu przez Klienta</strong>
+          <ol>
+            <li>Zakres danych zależy od tego, jakie informacje Klient wprowadzi i jakie procesy realizuje przy użyciu Systemu (np. dane dotyczące urządzeń, dokumentów, osób kontaktowych, zgłoszeń, historii czynności).</li>
+            <li>Klient powinien wprowadzać do Systemu wyłącznie dane niezbędne do realizacji celów Klienta oraz zgodnie z zasadą minimalizacji.</li>
+          </ol>
+        </li>
+        <li>
+          <strong>Dane szczególnych kategorii</strong>
+          <ol>
+            <li>System EMMA nie jest projektowany z myślą o rutynowym przetwarzaniu danych szczególnych kategorii. Jeżeli Klient wprowadza takie dane, ponosi odpowiedzialność za istnienie podstawy prawnej ich przetwarzania oraz za właściwe zabezpieczenia.</li>
+          </ol>
+        </li>
+      </ol>
+
+      <h2>III. CELE I PODSTAWY PRAWNE PRZETWARZANIA</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Cel przetwarzania</th>
+              <th>Podstawa prawna (RODO)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Świadczenie usługi dostępu do Systemu, utrzymanie konta, realizacja umowy z Klientem</td>
+              <td>art. 6 ust. 1 lit. b (wykonanie umowy)</td>
+            </tr>
+            <tr>
+              <td>Kontakt w sprawach dotyczących działania Systemu, obsługa zgłoszeń i komunikacja operacyjna</td>
+              <td>art. 6 ust. 1 lit. b oraz lit. f (prawnie uzasadniony interes – sprawna obsługa)</td>
+            </tr>
+            <tr>
+              <td>Rozliczenia, wystawianie dokumentów księgowych, obowiązki podatkowe</td>
+              <td>art. 6 ust. 1 lit. c (obowiązek prawny)</td>
+            </tr>
+            <tr>
+              <td>Zapewnienie bezpieczeństwa Systemu (logi, monitoring nadużyć, audyt)</td>
+              <td>art. 6 ust. 1 lit. f (prawnie uzasadniony interes – bezpieczeństwo)</td>
+            </tr>
+            <tr>
+              <td>Ustalanie, dochodzenie i obrona roszczeń</td>
+              <td>art. 6 ust. 1 lit. f (prawnie uzasadniony interes)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>IV. ODBIORCY DANYCH I PODMIOTY PRZETWARZAJĄCE</h2>
+      <ol>
+        <li>W związku z realizacją usługi dane mogą być udostępniane wyłącznie w zakresie niezbędnym podmiotom wspierającym obsługę Systemu (np. hosting, serwis IT, narzędzia do automatyzacji, wsparcie techniczne, podmioty księgowe i prawne).</li>
+        <li>System EMMA korzysta z rozwiązań dostawców technologicznych (podmiotów przetwarzających), w szczególności:
+          <ul>
+            <li>Formagrid Inc., 1 Front Street, Floor 28, San Francisco, CA 94111– narzędzia bazodanowe i przechowywanie danych operacyjnych w ramach Systemu,</li>
+            <li>Softr Platforms GmbH, Rosenthaler Straße 13, 10119 Berlin, Germany – warstwa aplikacyjna/interfejs użytkownika umożliwiający korzystanie z Systemu,</li>
+            <li>PDFMonkey, 51 rue de Ponthieu, Lot 41, 75008 Paris, France  – generowanie dokumentów w formacie PDF w ramach funkcjonalności Systemu.</li>
+          </ul>
+        </li>
+        <li>Współpraca z dostawcami odbywa się przy zachowaniu wymogów RODO, w szczególności na podstawie umów powierzenia oraz odpowiednich zabezpieczeń.</li>
+      </ol>
+
+      <h2>V. PRZEKAZYWANIE DANYCH POZA EOG</h2>
+      <ol>
+        <li>Ze względu na wykorzystywanie usług dostawców technologicznych dane mogą być przekazywane poza Europejski Obszar Gospodarczy.</li>
+        <li>W takich przypadkach stosujemy wymagane prawem zabezpieczenia, w tym w szczególności standardowe klauzule umowne oraz inne mechanizmy przewidziane w rozdziale V RODO – adekwatnie do relacji z danym dostawcą.</li>
+      </ol>
+
+      <h2>VI. OKRES PRZECHOWYWANIA DANYCH</h2>
+      <ol>
+        <li>Dane Użytkowników Systemu oraz dane operacyjne przechowujemy przez okres trwania umowy z Klientem, a po jej zakończeniu przez czas niezbędny do:
+          <ul>
+            <li>rozliczeń,</li>
+            <li>zapewnienia ciągłości i rozliczalności (np. logi bezpieczeństwa – przez okres uzasadniony),</li>
+            <li>ustalenia, dochodzenia lub obrony roszczeń,</li>
+            <li>spełnienia obowiązków prawnych (np. podatkowych/księgowych).</li>
+          </ul>
+        </li>
+        <li>Dane wprowadzone do Systemu przez Klienta przechowywane są zgodnie z ustaleniami umownymi i poleceniami Klienta jako administratora danych – w szczególności w zakresie usunięcia, eksportu lub zwrotu danych.</li>
+      </ol>
+
+      <h2>VII. PRAWA OSÓB, KTÓRYCH DANE DOTYCZĄ</h2>
+      <ol>
+        <li>Osobom, których dane dotyczą, przysługują prawa wynikające z RODO, w szczególności:
+          <ul>
+            <li>dostępu do danych,</li>
+            <li>sprostowania danych,</li>
+            <li>usunięcia danych (w przypadkach przewidzianych prawem),</li>
+            <li>ograniczenia przetwarzania,</li>
+            <li>przenoszenia danych,</li>
+            <li>wniesienia sprzeciwu – gdy podstawą przetwarzania jest uzasadniony interes,</li>
+            <li>wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych.</li>
+          </ul>
+        </li>
+        <li>Jeżeli Usługodawca działa jako podmiot przetwarzający (co do zasady w odniesieniu do danych wprowadzanych przez Klienta), żądania realizacji praw powinny być kierowane przede wszystkim do Klienta jako administratora danych. Usługodawca wspiera Klienta w realizacji tych żądań w zakresie przewidzianym umową powierzenia.</li>
+      </ol>
+
+      <h2>VIII. PLIKI COOKIES I DANE TECHNICZNE</h2>
+      <ol>
+        <li>System może wykorzystywać pliki cookies oraz podobne technologie w celu:
+          <ul>
+            <li>zapewnienia prawidłowego działania Systemu i utrzymania sesji,</li>
+            <li>zapewnienia bezpieczeństwa (np. wykrywanie nadużyć),</li>
+            <li>usprawnienia korzystania z Systemu (ustawienia, preferencje).</li>
+          </ul>
+        </li>
+        <li>Użytkownik może zarządzać cookies poprzez ustawienia przeglądarki. Ograniczenie cookies może wpłynąć na działanie niektórych funkcji Systemu.</li>
+      </ol>
+
+      <h2>IX. BEZPIECZEŃSTWO</h2>
+      <ol>
+        <li>Stosujemy środki organizacyjne i techniczne adekwatne do ryzyk związanych z przetwarzaniem, w szczególności:
+          <ul>
+            <li>szyfrowanie transmisji danych (TLS/SSL),</li>
+            <li>kontrolę dostępu (role i uprawnienia),</li>
+            <li>rejestrowanie zdarzeń (audit trail) w zakresie istotnym dla bezpieczeństwa i rozliczalności,</li>
+            <li>kopie zapasowe oraz procedury ciągłości działania,</li>
+            <li>aktualizacje i utrzymanie środowiska w celu ograniczania podatności.</li>
+          </ul>
+        </li>
+        <li>Klient odpowiada za prawidłowe nadawanie uprawnień Użytkownikom oraz za bezpieczeństwo haseł i urządzeń, z których korzystają Użytkownicy.</li>
+      </ol>
+
+      <h2>X. KONTAKT</h2>
+      <ol>
+        <li>W sprawach związanych z prywatnością i przetwarzaniem danych osobowych prosimy o kontakt:
+          <ul>
+            <li><strong>E-mail:</strong> pawel@emmamed.com</li>
+            <li><strong>Adres korespondencyjny:</strong> Paweł Karczewki, Agawy 8/15, 01-158 Warszawa</li>
+          </ul>
+        </li>
+      </ol>
+
+      <h2>XI. ZMIANY POLITYKI</h2>
+      <ol>
+        <li>Polityka może być aktualizowana w przypadku zmian prawnych, organizacyjnych lub technologicznych związanych z funkcjonowaniem Systemu.</li>
+        <li>Aktualna wersja dokumentu obowiązuje od daty wskazanej poniżej.</li>
+      </ol>
+
+      <p class="badge">Wersja: 01/2026 • Data obowiązywania: 01.01.2026</p>
+    </article>
+  </main>
+
+  <div id="footer-placeholder"></div>
+</body>
+</html>
