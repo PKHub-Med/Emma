@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Regulamin EMMA | Świadczenie usług drogą elektroniczną</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-color: #0f172a;
+      --secondary-color: #64748b;
+      --accent-color: #3b82f6;
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --text-color: #1e293b;
+      --table-header-bg: #f1f5f9;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-color);
+      line-height: 1.7;
+      background-color: var(--bg-color);
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: var(--card-bg);
+      padding: 60px;
+      border-radius: 16px;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    h1, h2, h3 { color: var(--primary-color); }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 30px;
+      line-height: 1.2;
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 20px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin: 40px 0 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-left: 4px solid var(--accent-color);
+      padding-left: 15px;
+    }
+
+    h3 {
+      font-size: 18px;
+      margin: 30px 0 15px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    p { margin-bottom: 18px; text-align: justify; }
+
+    ol, ul { margin-bottom: 24px; padding-left: 25px; }
+    li { margin-bottom: 10px; }
+
+    .muted {
+      color: var(--secondary-color);
+      font-style: italic;
+      margin-top: -8px;
+    }
+
+    /* Tables */
+    .table-container {
+      overflow-x: auto;
+      margin: 30px 0;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      background: white;
+    }
+
+    th {
+      background-color: var(--table-header-bg);
+      color: var(--primary-color);
+      font-weight: 700;
+      text-align: left;
+      padding: 14px 18px;
+      border-bottom: 2px solid var(--border-color);
+    }
+
+    td {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border-color);
+      vertical-align: top;
+      color: var(--secondary-color);
+    }
+
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) { background-color: #fafafa; }
+
+    strong { color: var(--primary-color); }
+
+    .badge {
+      display: inline-block;
+      font-size: 12px;
+      padding: 4px 10px;
+      border: 1px solid var(--border-color);
+      border-radius: 999px;
+      color: var(--secondary-color);
+      margin-top: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .container { padding: 30px 20px; }
+      h1 { font-size: 24px; }
+    }
+  </style>
+
+  <!-- Zachowuję placeholdery jak w przesłanym wzorze -->
+  <script src="js/components.js" defer></script>
+  
+</head>
+
+<body>
+  <div id="header-placeholder"></div>
+
+  <main class="container">
+    <article>
+      <h1>REGULAMIN ŚWIADCZENIA USŁUG DROGĄ ELEKTRONICZNĄ – SYSTEM EMMA</h1>
+      <p class="muted">Dokument przeznaczony dla podmiotów profesjonalnych (B2B). System EMMA dostępny pod adresem: <strong>www.emmamed.com</strong>.</p>
+
+      <ol style="list-style-type: upper-roman;">
+        <li>
+          <strong>POSTANOWIENIA OGÓLNE</strong>
+          <ol>
+            <li>Niniejszy Regulamin określa zasady świadczenia usług drogą elektroniczną w modelu SaaS (Software as a Service) za pośrednictwem systemu EMMA dostępnego pod adresem <strong>www.emmamed.com</strong>.</li>
+            <li>System EMMA jest aplikacją webową przeznaczoną do zarządzania cyklem życia urządzeń medycznych.</li>
+            <li>Usługi świadczone są na rzecz podmiotów profesjonalnych (B2B), w szczególności podmiotów leczniczych w rozumieniu ustawy o działalności leczniczej.</li>
+            <li>Regulamin stanowi integralną część Umowy zawartej pomiędzy Usługodawcą a Klientem.</li>
+            <li>Korzystanie z systemu oznacza akceptację niniejszego Regulaminu.</li>
+          </ol>
+        </li>
+
+        <li>
+          <strong>DEFINICJE</strong>
+          <p class="muted">Poniższe definicje mają zastosowanie w całym Regulaminie:</p>
+
+          <div class="table-container">
+            <table>
+              <tbody>
+                <tr>
+                  <td style="width: 30%;"><strong>System EMMA</strong></td>
+                  <td>aplikacja webowa służąca do zarządzania cyklem życia urządzeń medycznych.</td>
+                </tr>
+                <tr>
+                  <td><strong>Usługodawca</strong></td>
+                  <td>podmiot świadczący usługę dostępu do Systemu EMMA.</td>
+                </tr>
+                <tr>
+                  <td><strong>Klient</strong></td>
+                  <td>podmiot leczniczy lub inna instytucja korzystająca z systemu na podstawie zawartej Umowy.</td>
+                </tr>
+                <tr>
+                  <td><strong>Użytkownik</strong></td>
+                  <td>osoba fizyczna posiadająca Konto w systemie EMMA i upoważniona przez Klienta do korzystania z systemu.</td>
+                </tr>
+                <tr>
+                  <td><strong>Administrator</strong></td>
+                  <td>Użytkownik posiadający rozszerzone uprawnienia do konfiguracji systemu i zarządzania użytkownikami.</td>
+                </tr>
+                <tr>
+                  <td><strong>Konto</strong></td>
+                  <td>indywidualny dostęp do systemu zabezpieczony adresem e-mail i hasłem.</td>
+                </tr>
+                <tr>
+                  <td><strong>Umowa</strong></td>
+                  <td>umowa zawarta pomiędzy Klientem a Usługodawcą dotycząca korzystania z systemu EMMA.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </li>
+
+        <li>
+          <strong>ZAKRES FUNKCJONALNY SYSTEMU</strong>
+          <ol>
+            <li>System EMMA umożliwia w szczególności:
+              <ul>
+                <li>ewidencję i zarządzanie urządzeniami medycznymi,</li>
+                <li>obsługę przeglądów technicznych i napraw,</li>
+                <li>generowanie zapytań ofertowych i zleceń w formacie PDF,</li>
+                <li>archiwizację dokumentacji,</li>
+                <li>analizę kosztów eksploatacji i amortyzacji sprzętu,</li>
+                <li>raportowanie i ocenę serwisów,</li>
+                <li>obsługę zapotrzebowań oraz zgłoszeń poprzez formularze (w tym formularze QR).</li>
+              </ul>
+            </li>
+            <li>Szczegółowe funkcjonalności systemu zostały opisane w specyfikacji produktu oraz materiałach instruktażowych.</li>
+          </ol>
+        </li>
+
+        <li>
+          <strong>OKRES PRÓBNY</strong>
+          <ol>
+            <li>Usługodawca może zaoferować Klientowi bezpłatny okres próbny trwający 1 (jeden) miesiąc.</li>
+            <li>Okres próbny dotyczy bazy obejmującej maksymalnie 100 urządzeń.</li>
+            <li>Warunkiem uruchomienia okresu próbnego jest dostarczenie przez Klienta danych zgodnie z wymaganiami technicznymi i formatem określonym przez Usługodawcę.</li>
+            <li>Po zakończeniu okresu próbnego dalsze korzystanie z systemu wymaga zawarcia Umowy subskrypcyjnej.</li>
+            <li>W przypadku braku zawarcia Umowy po zakończeniu okresu próbnego Usługodawca może zablokować dostęp do systemu.</li>
+          </ol>
+        </li>
+
+        <li>
+          <strong>PŁATNOŚCI I ZAWIESZENIE DOSTĘPU</strong>
+          <ol>
+            <li>Klient zobowiązany jest do terminowego regulowania opłat wynikających z Umowy.</li>
+            <li>W przypadku braku płatności w terminie:
+              <ol style="list-style-type: lower-alpha;">
+                <li>Usługodawca wysyła pierwsze wezwanie do zapłaty,</li>
+                <li>po upływie co najmniej 7 dni od pierwszego wezwania wysyłane jest drugie wezwanie.</li>
+              </ol>
+            </li>
+            <li>W przypadku braku uregulowania należności po dwóch wezwaniach, Usługodawca ma prawo:
+              <ol style="list-style-type: lower-alpha;">
+                <li>czasowo zawiesić dostęp do systemu,</li>
+                <li>ograniczyć funkcjonalność systemu,</li>
+                <li>wstrzymać wsparcie techniczne,</li>
+                <li><strong>usunąć dostępy oraz konta użytkowników</strong>, a także <strong>dokonać archiwizacji danych Klienta</strong> i <strong>przekazać je Klientowi</strong> w postaci <strong>edytowalnego pliku</strong> w uzgodnionym formacie.</li>
+              </ol>
+            </li>
+            <li>Przywrócenie dostępu następuje po uregulowaniu zaległości, z zastrzeżeniem konieczności ponownej konfiguracji kont użytkowników, jeżeli zostały usunięte.</li>
+            <li>Zawieszenie dostępu nie zwalnia Klienta z obowiązku zapłaty należnych opłat.</li>
+          </ol>
+        </li>
+
+        <li>
+          <strong>UPRAWNIENIA I BEZPIECZEŃSTWO DOSTĘPU</strong>
+          <ol>
+            <li>System umożliwia nadawanie ról i uprawnień użytkownikom.</li>
+            <li>Administrator po stronie Klienta może ograniczyć dostęp do:
+              <ul>
+                <li>wybranych modułów,</li>
+                <li>określonych rekordów,</li>
+                <li>danych finansowych,</li>
+                <li>funkcji edycji lub generowania dokumentów.</li>
+              </ul>
+            </li>
+            <li>Użytkownik posiada wgląd wyłącznie do elementów systemu przydzielonych mu zgodnie z nadanymi uprawnieniami.</li>
+            <li>System stosuje politykę haseł (minimalna długość, wymóg znaków specjalnych, mechanizmy blokady).</li>
+            <li>Hasła przechowywane są w formie szyfrowanej.</li>
+            <li>System prowadzi rejestr zdarzeń (audit trail).</li>
+            <li>Dane objęte są automatycznym backupem.</li>
+            <li>Usługodawca nie odpowiada za nieprawidłową konfigurację uprawnień dokonaną przez Klienta.</li>
+          </ol>
+        </li>
+
+        <li>
+          <strong>WYMAGANIA TECHNICZNE</strong>
+          <ol>
+            <li>System działa w modelu aplikacji webowej (SaaS) i nie wymaga instalacji po stronie użytkownika.</li>
+            <li>Dostęp do systemu możliwy jest poprzez aktualne wersje przeglądarek internetowych.</li>
+            <li>Logowanie odbywa się przy użyciu adresu e-mail i hasła.</li>
+            <li>System działa w architekturze klient–serwer z centralną bazą danych.</li>
+            <li>Dokumenty (w szczególności zapytania ofertowe i zlecenia) generowane są automatycznie w formacie PDF.</li>
+            <li>System oparty jest o nowoczesne rozwiązania chmurowe i narzędzia wspierające automatyzację procesów biznesowych.</li>
+          </ol>
+        </li>
+
+        <li>
+          <strong>ZASADY KORZYSTANIA Z SYSTEMU</strong>
+          <ol>
+            <li>Użytkownik zobowiązany jest do:
+              <ul>
+                <li>korzystania z systemu zgodnie z jego przeznaczeniem,</li>
+                <li>zachowania poufności danych logowania,</li>
+                <li>wprowadzania danych zgodnych ze stanem faktycznym.</li>
+              </ul>
+            </li>
+            <li>Zabronione jest:
+              <ul>
+                <li>udostępnianie konta osobom nieuprawnionym,</li>
+                <li>podejmowanie działań zakłócających działanie systemu,</li>
+                <li>wykorzystywanie systemu w sposób sprzeczny z prawem.</li>
+              </ul>
+            </li>
+          </ol>
+        </li>
+
+        <li>
+          <strong>WDROŻENIE I WSPARCIE</strong>
+          <ol>
+            <li>Wdrożenie systemu może obejmować:
+              <ul>
+                <li>konfigurację środowiska,</li>
+                <li>migrację danych na podstawie plików dostarczonych przez Klienta,</li>
+                <li>szkolenie użytkowników i administratorów.</li>
+              </ul>
+            </li>
+            <li>System objęty jest gwarancją (minimum 12 miesięcy) wraz z aktualizacjami.</li>
+            <li>Wsparcie serwisowe obejmuje:
+              <ul>
+                <li>obsługę zgłoszeń w dni robocze w określonych godzinach,</li>
+                <li>portal zgłoszeniowy dostępny 24/7.</li>
+              </ul>
+            </li>
+          </ol>
+        </li>
+
+        <li>
+          <strong>ODPOWIEDZIALNOŚĆ</strong>
+          <ol>
+            <li>Usługodawca zobowiązuje się do świadczenia usług z należytą starannością, zgodnie z aktualną wiedzą techniczną oraz obowiązującymi przepisami prawa.</li>
+            <li>Usługodawca zapewnia ciągłość działania systemu z uwzględnieniem planowanych przerw serwisowych oraz aktualizacji.</li>
+            <li>Usługodawca nie ponosi odpowiedzialności za:
+              <ul>
+                <li>skutki wprowadzenia błędnych danych przez Klienta,</li>
+                <li>decyzje biznesowe lub organizacyjne podjęte na podstawie danych z systemu,</li>
+                <li>przerwy wynikające z działania siły wyższej lub awarii infrastruktury niezależnej od Usługodawcy.</li>
+              </ul>
+            </li>
+            <li>Odpowiedzialność Usługodawcy z tytułu realizacji Umowy ograniczona jest do wysokości wynagrodzenia <strong>faktycznie zapłaconego</strong> za świadczenie usług w okresie ostatnich 3 miesięcy kalendarzowych poprzedzających zdarzenie powodujące szkodę.</li>
+            <li>Ograniczenie, o którym mowa powyżej, nie dotyczy:
+              <ul>
+                <li>szkód wyrządzonych umyślnie,</li>
+                <li>naruszenia przepisów dotyczących ochrony danych osobowych w zakresie, w jakim odpowiedzialność wynika z bezwzględnie obowiązujących przepisów prawa.</li>
+              </ul>
+            </li>
+            <li>Strony zobowiązują się w pierwszej kolejności do polubownego rozwiązania sporu, w tym poprzez procedurę reklamacyjną.</li>
+          </ol>
+        </li>
+
+        <li>
+          <strong>OCHRONA DANYCH OSOBOWYCH</strong>
+          <ol>
+            <li>Administratorem danych osobowych wprowadzanych do systemu jest Klient.</li>
+            <li>Usługodawca przetwarza dane jako podmiot przetwarzający na podstawie odrębnej umowy powierzenia przetwarzania danych.</li>
+            <li>Dane przetwarzane są zgodnie z obowiązującymi przepisami prawa, w szczególności RODO.</li>
+          </ol>
+        </li>
+
+        <li>
+          <strong>POSTANOWIENIA KOŃCOWE</strong>
+          <ol>
+            <li>Regulamin wchodzi w życie z dniem jego publikacji na stronie <strong>www.emmamed.com</strong>.</li>
+            <li>Usługodawca zastrzega sobie prawo do zmiany Regulaminu.</li>
+            <li>W sprawach nieuregulowanych zastosowanie mają przepisy prawa polskiego.</li>
+            <li>Spory rozstrzygane będą przez sąd właściwy dla siedziby Usługodawcy, o ile Umowa nie stanowi inaczej.</li>
+          </ol>
+        </li>
+      </ol>
+
+      <p class="badge">Wersja: 012026</p>
+    </article>
+  </main>
+
+  <div id="footer-placeholder"></div>
+  
+</body>
+</html>
